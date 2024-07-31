@@ -1,0 +1,54 @@
+---
+title: "Título"
+author: "Igo da Costa Andrade"
+
+# Metadados
+booktitle: "Física Matemática"
+booksubtitle: "Métodos matemáticos para engenharia e física"
+bookauthors: "Arfken, G. B.; Weber, H. J.; HARRIS, F. E."
+bookaddres: "Rio de Janeiro"
+bookpublisher: "Elsevier"
+bookyear: "2007"
+chaptertitle: "Análise Vetorial"
+chapternumber: "1"
+maincolor: "018ed3"
+
+output: 
+  bookdown::pdf_document2:
+    template: template.tex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+use_python("~/anaconda3/envs/science/bin/python")
+
+## Funções auxiliares
+fmt <- function(x, n=2, decimal.mark=',', big.mark='.', scientific=FALSE) {
+  result <- format(
+    round(x=x, digits=n), 
+    decimal.mark=decimal.mark, 
+    big.mark=big.mark,
+    scientific=scientific
+  )
+  return(result)
+}
+```
+
+\section{Definições, Abordagem Elementar}
+
+\begin{enumerate}
+  \item Mostre como encontrar $\vet{A}$ e $\vet{B}$, dados $\vet{A} + \vet{B}$ e $\vet{A} - \vet{B}$.\\
+  \iniSol
+  
+  \fimSol
+  
+```{r prob_1-1-2, include=FALSE}
+A <- 1.732 
+```
+
+  \item O vetor $\vet{A}$, cuja grandeza é `r fmt(A, n=3)` unidade e faz ângulos iguais com os eixos coordenados. Ache $A_x$, $A_y$ e $A_z$.\\
+  \iniSol
+  
+  \fimSol
+\end{enumerate}
